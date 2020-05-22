@@ -35,11 +35,11 @@ class HelloApiView(APIView):
                 status=status.HTTP_400_BAD_REQUEST              
                  )
 
-    def put(self,request, pk=None):
+    def put(self, request, pk=None):
         """Update entire object"""
         return Response({'method':'PUT'})
 
-    def path(self,request, pk=None):
+    def path(self, request, pk=None):
         """Para hacer updates parciales"""
         return Response({'method':'PATCH'})
 

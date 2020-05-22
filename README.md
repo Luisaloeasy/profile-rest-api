@@ -1,3 +1,3 @@
 # Profiles REST API
 
-Profiles rest api course.
+Profiles rest api course!
