@@ -14,14 +14,15 @@ from profiles_api import permissions
 
 
 class HelloApiView(APIView):
-
+    """Test APIView"""
+    #Cada vez que haga un POST o PUT requset llama a la classe HelloSerializer y ve los fields que tiene
     serializer_class = serializers.HelloSerializer
 
     def get(self, request, format=None):
         """Return  lista of APIView features"""
         an_apiview = [
 
-                'Uses HTTP methods as function ',
+                'Uses HTTP methods as function GET,POST,PATCH,PUT,DELETE',
                 'Is similar to a traditional djando view',
                 'Gives you the most control over your aplication logic',
                 'Is mapped manually to URLs',
@@ -33,6 +34,7 @@ class HelloApiView(APIView):
         """Create a hello message with our name"""
         serializer = self.serializer_class(data=request.data)
         
+        #Verificacion que cumpla con la validacion de serializer
         if serializer.is_valid():
             name = serializer.validated_data.get('name')
             message = f'Hello {name}'
@@ -40,6 +42,7 @@ class HelloApiView(APIView):
         else:
             return Response(                
                 serializer.errors, 
+                #status es el estado del response 200 is OK, 400 BAD
                 status=status.HTTP_400_BAD_REQUEST              
                  )
 
@@ -115,7 +118,7 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
 
 class UserLoginApiView(ObtainAuthToken):
-    """Handle creatin user auth token"""
+    """Handle creating user auth token"""
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
 

@@ -8,7 +8,6 @@ class HelloSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=10)
 
 
-
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializer a user profile object"""
 

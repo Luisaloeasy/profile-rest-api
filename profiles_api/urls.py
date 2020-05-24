@@ -6,7 +6,7 @@ from profiles_api import views
 
 router= DefaultRouter()
 router.register('hello-viewset',views.HelloViewSet,base_name='hello-viewset')
-router.register('profile', views.UserProfileViewSet)
+router.register('profile', views.UserProfileViewSet) #Por tener un queryset no debo usar base name
 router.register('feed', views.UserProfileFeedViewSet)
 
 

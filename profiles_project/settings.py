@@ -125,3 +125,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+#Representa el model que usaras del django user model "nameapp.namemodel" que uso para la autenticacion
